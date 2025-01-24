@@ -12,19 +12,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #eef7fa;
+            background-color: #f7f9fc;
+            color: #333;
         }
 
         header {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         nav {
-            background: #333;
+            background: #444;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         nav ul {
@@ -42,27 +45,29 @@
         nav ul li a {
             color: #f3faf3;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            text-decoration: underline;
+            color: #6a11cb;
         }
 
         .hero {
             text-align: center;
-            padding: 50px 20px;
-            background: #f3faf3;
+            padding: 20px 10px;
+            background: #e3f2fd;
+            color: #1e88e5;
         }
 
         .hero h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 10px;
-            font-weight: 700; /* Professional font weight */
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.2em;
-            font-weight: 400; /* Professional font weight */
+            font-size: 1em;
+            font-weight: 400;
         }
 
         .container {
@@ -72,53 +77,112 @@
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .features, .team {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
+        .features {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
         .card {
-            background: #f3faf3;
+            background: #ffffff;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             text-align: center;
-            width: 300px;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .features .card:nth-child(3) {
+            margin-top: 0;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .team .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            background: #333;
+            background: #444;
             color: white;
             text-align: center;
-            padding: 30px 0;
-            padding-top: 30px;
-            padding-right: 20px;
-            padding-bottom: 30px;
-            padding-left: 20px;
+            padding: 40px 0;
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
         }
 
         footer a {
-            color: #4CAF50;
+            color: #6a11cb;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #2575fc;
         }
 
         .separator {
-            border-top: 2px solid #333;
+            border-top: 2px dashed #ddd;
             width: 100%;
-            margin: 20px 0;
+            margin: 50px 0;
+        }
+
+        #bot-view img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team .card img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #how-it-works {
+            font-size: 1.2em;
+            padding: 30px 20px;
         }
 
     </style>
@@ -133,6 +197,7 @@
         <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="bot.jpg" target="_blank">View Bot</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -178,24 +243,32 @@
             <h2>Meet the Team</h2>
             <div class="team">
                 <div class="card">
+                    <img src="jeya.jpg" alt="Jeya">
+                    <h3>Dr.R.Jeya</h3>
+                    <p>Team Mentor</p>
+                </div>
+                <div class="card">
+                    <img src="ashish.jpg" alt="Ashish Sukumar">
                     <h3>Ashish Sukumar</h3>
                     <p>Team Lead & Hardware Designer</p>
                 </div>
                 <div class="card">
+                    <img src="ramuji.jpg" alt="Ramuji D">
                     <h3>Ramuji D</h3>
                     <p>Hardware Designer</p>
                 </div>
                 <div class="card">
+                    <img src="ganesh.jpg" alt="Ganesh K">
                     <h3>Ganesh K</h3>
                     <p>AI/ML Developer</p>
                 </div>
                 <div class="card">
+                    <img src="rithish.jpg" alt="Rithish R">
                     <h3>Rithish R</h3>
                     <p>Frontend Developer</p>
                 </div>
             </div>
         </section>
-        <div class="separator"></div>
 
         <section id="contact" class="section">
             <h2>Contact Us</h2>
@@ -206,11 +279,5 @@
     <footer>
         <p>&copy; 2025 Assistant Bot | <a href="#">Privacy Policy</a></p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Website loaded successfully!');
-        });
-    </script>
 </body>
 </html>
