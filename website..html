@@ -21,7 +21,30 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(38, 70, 83, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6a11cb, 0 0 40px #6a11cb, 0 0 50px #6a11cb, 0 0 60px #6a11cb, 0 0 70px #6a11cb;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #6a11cb, 0 0 40px #6a11cb, 0 0 50px #6a11cb, 0 0 60px #6a11cb, 0 0 70px #6a11cb, 0 0 80px #6a11cb;
+            }
         }
 
         nav {
@@ -94,11 +117,11 @@
         }
 
         .card {
-            background: #ffffff;
+            background: #f0f4ff;
             border: 1px solid #ddd;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             width: 280px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -181,8 +204,10 @@
         }
 
         #how-it-works {
-            font-size: 1.2em;
-            padding: 30px 20px;
+            font-size: 1em;
+            padding: 20px 10px;
+            background-color: #e8f0fe;
+            margin: 20px 0;
         }
 
     </style>
@@ -244,8 +269,8 @@
             <div class="team">
                 <div class="card">
                     <img src="jeya.jpg" alt="Jeya">
-                    <h3>Dr.R.Jeya</h3>
-                    <p>Team Mentor</p>
+                    <h3>Jeya</h3>
+                    <p>Mentor</p>
                 </div>
                 <div class="card">
                     <img src="ashish.jpg" alt="Ashish Sukumar">
