@@ -110,12 +110,6 @@
             justify-content: center;
         }
 
-        .features {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
         .card {
             background: #f0f4ff;
             border: 1px solid #ddd;
@@ -128,33 +122,6 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .features .card:nth-child(3) {
-            margin-top: 0;
-        }
-
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .team .card {
-            background: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            text-align: center;
-            width: 280px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .team .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
@@ -186,30 +153,6 @@
             margin: 50px 0;
         }
 
-        #bot-view img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .team .card img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        #how-it-works {
-            font-size: 1em;
-            padding: 20px 10px;
-            background-color: #e8f0fe;
-            margin: 20px 0;
-        }
-
     </style>
 </head>
 <body>
@@ -225,6 +168,8 @@
             <li><a href="bot.jpg" target="_blank">View Bot</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="live-feed.html" target="Live-Feed.html">Live Feed</a></li>
+            <li><a href="gps-location.html" target="GPS-Location.html">GPS Location</a></li>
         </ul>
     </nav>
 
@@ -304,5 +249,25 @@
     <footer>
         <p>&copy; 2025 Assistant Bot | <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        function showNotification(message) {
+            var notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.left = '50%';
+            notification.style.transform = 'translateX(-50%)';
+            notification.style.backgroundColor = '#007bff';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
+            document.body.appendChild(notification);
+            setTimeout(function() {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
