@@ -113,7 +113,7 @@
             }
 
             refreshBtn.addEventListener('click', function () {
-                const baseSrc = "http://192.168.1.24:8000/?action=stream";
+                const baseSrc = "http://192.168.25.21:5000/?action=stream";
                 livestream.src = '';
                 setTimeout(function () {
                     livestream.src = baseSrc + '&t=' + new Date().getTime();
