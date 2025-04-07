@@ -80,8 +80,8 @@
     </div>
     
     <div class="video-container">
-        <!-- This is the source for a USB camera on Raspberry Pi using mjpg-streamer -->
-        <img src="http://RASPBERRY_PI_IP:8000/?action=stream" id="livestream" class="live-feed" alt="Live camera feed">
+        <!-- Updated IP address to Raspberry Pi's live stream -->
+        <img src="http://192.168.1.24:8000/?action=stream" id="livestream" class="live-feed" alt="Live camera feed">
     </div>
     
     <div class="controls">
@@ -96,33 +96,31 @@
             const statusText = document.getElementById('statusText');
             const livestream = document.getElementById('livestream');
             const refreshBtn = document.getElementById('refreshBtn');
-            
-            // Check if the stream is loading
+
             function checkStreamStatus() {
                 statusIndicator.classList.remove('active');
                 statusText.textContent = 'Connecting to camera...';
-                
-                livestream.onload = function() {
+
+                livestream.onload = function () {
                     statusIndicator.classList.add('active');
                     statusText.textContent = 'USB Camera connected and streaming';
                 };
-                
-                livestream.onerror = function() {
+
+                livestream.onerror = function () {
                     statusIndicator.classList.remove('active');
                     statusText.textContent = 'Error connecting to USB camera';
                 };
             }
-            
-            // Refresh connection
-            refreshBtn.addEventListener('click', function() {
-                const src = livestream.src;
+
+            refreshBtn.addEventListener('click', function () {
+                const baseSrc = "http://192.168.1.24:8000/?action=stream";
                 livestream.src = '';
-                setTimeout(function() {
-                    livestream.src = src + '&t=' + new Date().getTime();
+                setTimeout(function () {
+                    livestream.src = baseSrc + '&t=' + new Date().getTime();
                     checkStreamStatus();
                 }, 500);
             });
-            
+
             // Initial check
             checkStreamStatus();
         });
