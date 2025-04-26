@@ -80,15 +80,15 @@
     </div>
     
     <div class="video-container">
-        <!-- Updated IP address to Raspberry Pi's live stream -->
-        <img src="http://192.168.25.21:8000/?action=stream" id="livestream" class="live-feed" alt="Live camera feed">
+        <!-- Updated to match Flask stream route -->
+        <img src="http://192.168.1.5:8000/video_feed" id="livestream" class="live-feed" alt="Live camera feed">
     </div>
     
     <div class="controls">
         <button id="refreshBtn">Refresh Connection</button>
     </div>
     
-    <p>View real-time footage from the USB camera connected to Raspberry Pi.</p>
+    <p>View real-time footage with YOLOv4-tiny object detection from Raspberry Pi.</p>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -113,10 +113,10 @@
             }
 
             refreshBtn.addEventListener('click', function () {
-                const baseSrc = "http://192.168.25.21:5000/?action=stream";
+                const baseSrc = "http://192.168.1.5:8000/video_feed";
                 livestream.src = '';
                 setTimeout(function () {
-                    livestream.src = baseSrc + '&t=' + new Date().getTime();
+                    livestream.src = baseSrc + '?t=' + new Date().getTime();
                     checkStreamStatus();
                 }, 500);
             });
