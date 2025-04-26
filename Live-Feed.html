@@ -81,7 +81,7 @@
     
     <div class="video-container">
         <!-- Updated to match Flask stream route -->
-        <img src="http://192.168.1.15:5000/video" id="livestream" class="live-feed" alt="Live camera feed">
+        <img src="https://ngrok.com/r/iep/video" id="livestream" class="live-feed" alt="Live camera feed">
     </div>
     
     <div class="controls">
@@ -113,7 +113,7 @@
             }
 
             refreshBtn.addEventListener('click', function () {
-                const baseSrc = "http://192.168.1.15:5000/video";
+                const baseSrc = "https://ngrok.com/r/iep/video";
                 //added video
                 livestream.src = '';
                 setTimeout(function () {
